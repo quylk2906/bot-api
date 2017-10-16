@@ -1,0 +1,84 @@
+<section class="padding-110px-tb bg-white builder-bg xs-padding-60px-tb wow slideInUp" data-wow-duration="0.5s" data-wow-delay="0.5s" id="feature-section18">
+    <div class="container">
+        <div class="row">
+            <!-- section title -->
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <h4 style="color: #00abf1; margin-bottom: 15px">List of Parent <a style=" margin-right: 50px" class="btn btn-medium propClone bg-sky-blue text-white tz-text btn-circle xs-margin-ten-bottom" href="/yola/admin/dashboard/export-parent"><span class="tz-text">Export Now</span><i class="fa fa-angle-right icon-extra-small tz-icon-color"></i></a></h4>
+                <table class="table table-striped">
+                    <thead>
+                        <tr class="success">
+                            <th>STT</th>
+                            <th>Tên</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Đia chỉ</th>
+                            <th>Đơn vị công tác</th>
+                            <th>Chức danh</th>
+                            <th>Con học lớp</th>
+                            <th>HCM/HN</th>
+                            <th>Yola's student</th>
+                            <th>Information</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-striped">
+                        {{#each parents}}
+                            <tr>
+                                <td>{{inc @index}}</td>
+                                <td>{{this.name}}</td>
+                                <td>{{this.email}}</td>
+                                <td>{{this.phone}}</td>
+                                <td>{{this.address}}</td>
+                                <td>{{this.company}}</td>
+                                <td>{{this.position}}</td>
+                                <td>{{this.myClass}}</td>
+                                <td>{{this.city}}</td>
+                                <td>{{this.studentOfYola}}</td>
+                                <td>{{this.information}}</td>
+                            </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+            <!-- end section title -->
+        </div>
+        <div class="row">
+            <!-- section title -->
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <h4 style="color: #00abf1; margin-bottom: 15px">List of Student <a style=" margin-right: 50px" class="btn btn-medium propClone bg-sky-blue text-white tz-text btn-circle xs-margin-ten-bottom" href="/yola/admin/dashboard/export-student"><span class="tz-text">Export Now</span><i class="fa fa-angle-right icon-extra-small tz-icon-color"></i></a></h4>
+                <table class="table table-striped">
+                    <thead>
+                        <tr class="success">
+                            <th>STT</th>
+                            <th>Tên</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Đia chỉ</th>
+                            <th>Ngày sinh</th>
+                            <th>Trường</th>
+                            <th>HN/HCM</th>
+                            <th>Yola's student</th>
+                            <th>Information</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-striped">
+                        {{#each students}}
+                            <tr>
+                                <td>{{inc @index}}</td>
+                                <td>{{this.name}}</td>
+                                <td>{{this.email}}</td>
+                                <td>{{this.phone}}</td>
+                                <td>{{this.address}}</td>
+                                <td>{{this.birthday}}</td>
+                                <td>{{this.school}}</td>
+                                <td>{{this.city}}</td>
+                                <td>{{this.studentOfYola}}</td>
+                                <td>{{this.information}}</td>
+                            </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+            <!-- end section title -->
+        </div>
+    </div>
+</section>
