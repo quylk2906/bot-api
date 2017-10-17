@@ -21,116 +21,61 @@
                             <!-- tab end navigation -->
                         </div>
                     </div>
-                    <div class="tab-content">
-
+                    <div class="tab-content">     
                         <!-- tab content -->
                         <div class="tab-pane med-text fade in active" id="tab_sec0">
+                            
                             <div class="row">
                                 <form action="/bot/add_update/vIJQh69U0r" class="width-100" method="post">
-                                    <textarea class="medium-input border-radius-4" style="height: 150px" data-email="required" id="greeting" name="greeting" placeholder="*Your Greeting Message" type="text"></textarea>
-                                    <input class="medium-input border-radius-4" data-email="required" id="thu-cung" name="thu-cung" placeholder="* Thú cưng" type="text" value="Thú cưng"/>
+                                    <textarea class="medium-input border-radius-4" style="height: 150px" data-email="required" id="greeting" name="greeting" placeholder="*Your Greeting Message" type="text">{{doc.greeting_message}}</textarea>
+                                    <input class="medium-input border-radius-4" data-email="required" id="thu-cung" name="thu-cung" placeholder="* Thú cưng" type="text" value="{{doc.data_dialog.0.dialogName}}"/>
                                     <div class="row">
                                         <div class="col-md-11 col-md-offset-1">
-                                            <input class="medium-input border-radius-4" data-email="required" id="" name="thu-cung-1" placeholder="Thú cưng 1" type="text" value="Thú cưng 1"/>
-                                            <div class="row">
-                                                <div class="col-md-4 col-md-offset-0">
-                                                    <input class="medium-input border-radius-4" data-email="required" id="" name="thu-cung-1-number" placeholder="Number of cards" type="text" value="11"/>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <a href="#tab_sec1" data-toggle="tab" style="margin-left:-50%" class="btn btn-default">Add Card</a>
-                                                </div>
-                                            </div>
-
-                                            <input class="medium-input border-radius-4" data-email="required" id="" name="thu-cung-2" placeholder="Thú cưng 2" type="text" value="Thú cưng 2"/>
-                                            <div class="row">
-                                                <div class="col-md-4 col-md-offset-0">
-                                                    <input class="medium-input border-radius-4" data-email="required" id="" name="thu-cung-2-number" placeholder="Number of cards" type="text" value="22"/>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <a href="#tab_sec2" data-toggle="tab" style="margin-left:-50%" class="btn btn-default">Add Card</a>
-                                                </div>
-                                            </div>
-
-                                            <input class="medium-input border-radius-4" data-email="required" id="" name="thu-cung-3" placeholder="Thú cưng 3" type="text" value="Thú cưng 3"/>
-                                            <div class="row">
-                                                <div class="col-md-4 col-md-offset-0">
-                                                    <input class="medium-input border-radius-4" data-email="required" id="" name="thu-cung-3-number" placeholder="Number of cards" type="text" value="33"/>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    {{!-- <button type="button" style="margin-left:-75%" class="btn btn-default" data-toggle="modal" data-target="#myModal">Add Card</button> --}}
-                                                    <a href="#tab_sec3" data-toggle="tab" style="margin-left:-50%" class="btn btn-default">Add Card</a>
-                                                </div>
-                                            </div>
+                                            {{#each doc.data_dialog.0.content}}
+                                                <input class="medium-input border-radius-4" data-email="required" id="" name="thu-cung-{{inc @index 0}}" placeholder="Thú cưng 1" type="text" value="{{this.childDialogName}}"/>
+                                                    <div class="row">
+                                                        <div class="col-md-4 col-md-offset-0">
+                                                            <input class="medium-input border-radius-4" data-email="required" id="" name="thu-cung-1-number" placeholder="Number of cards" type="text" value="{{this.pagination}}"/>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <a href="#tab_sec{{inc @index 0}}" data-toggle="tab" style="margin-left:-50%" class="btn btn-default">Add Card</a>
+                                                        </div>
+                                                    </div>
+                                            {{/each}}
                                         </div>
                                     </div>
 
-                                    <input class="medium-input border-radius-4" data-email="required" id="san-pham" name="san-pham" placeholder="* Sản phẩm" type="text" value=""/>
+                                    <input class="medium-input border-radius-4" data-email="required" id="thu-cung" name="thu-cung" placeholder="* Thú cưng" type="text" value="{{doc.data_dialog.1.dialogName}}"/>
                                     <div class="row">
                                         <div class="col-md-11 col-md-offset-1">
-                                            <input class="medium-input border-radius-4" data-email="required" id="" name="san-pham-1" placeholder="Sản phẩm 1" type="text" />
-                                            <div class="row">
-                                                <div class="col-md-4 col-md-offset-0">
-                                                    <input class="medium-input border-radius-4" data-email="required" id="" name="san-pham-1-number" placeholder="Number of cards" type="text" />
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <a href="#tab_sec4" data-toggle="tab" style="margin-left:-50%" class="btn btn-default">Add Card</a>
-                                                </div>
-                                            </div>
-
-                                            <input class="medium-input border-radius-4" data-email="required" id="" name="san-pham-2" placeholder="Sản phẩm 2" type="text" />
-                                            <div class="row">
-                                                <div class="col-md-4 col-md-offset-0">
-                                                    <input class="medium-input border-radius-4" data-email="required" id="" name="san-pham-2-number" placeholder="Number of cards" type="text" />
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <a href="#tab_sec5" data-toggle="tab" style="margin-left:-50%" class="btn btn-default">Add Card</a>
-                                                </div>
-                                            </div>
-
-                                            <input class="medium-input border-radius-4" data-email="required" id="" name="san-pham-3" placeholder="Sản phẩm 3" type="text" />
-                                            <div class="row">
-                                                <div class="col-md-4 col-md-offset-0">
-                                                    <input class="medium-input border-radius-4" data-email="required" id="" name="san-pham-3-number" placeholder="Number of cards" type="text" />
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <a href="#tab_sec6" data-toggle="tab" style="margin-left:-50%" class="btn btn-default">Add Card</a>
-                                                </div>
-                                            </div>
+                                            {{#each doc.data_dialog.1.content}}
+                                                <input class="medium-input border-radius-4" data-email="required" id="" name="thu-cung-{{inc @index}}" placeholder="Thú cưng 1" type="text" value="{{this.childDialogName}}"/>
+                                                    <div class="row">
+                                                        <div class="col-md-4 col-md-offset-0">
+                                                            <input class="medium-input border-radius-4" data-email="required" id="" name="thu-cung-1-number" placeholder="Number of cards" type="text" value="{{this.pagination}}"/>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <a href="#tab_sec{{inc @index 3}}" data-toggle="tab" style="margin-left:-50%" class="btn btn-default">Add Card</a>
+                                                        </div>
+                                                    </div>
+                                            {{/each}}
                                         </div>
                                     </div>
 
-                                    <input class="medium-input border-radius-4" data-email="required" id="dich-vu" name="dich-vu" placeholder="* Dịch vụ" type="text" />
+                                    <input class="medium-input border-radius-4" data-email="required" id="thu-cung" name="thu-cung" placeholder="* Thú cưng" type="text" value="{{doc.data_dialog.2.dialogName}}"/>
                                     <div class="row">
                                         <div class="col-md-11 col-md-offset-1">
-                                            <input class="medium-input border-radius-4" data-email="required" id="" name="dich-vu-1" placeholder="Dịch vụ 1" type="text" />
-                                            <div class="row">
-                                                <div class="col-md-4 col-md-offset-0">
-                                                    <input class="medium-input border-radius-4" data-email="required" id="" name="dich-vu-1-number" placeholder="Number of cards" type="text" />
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <a href="#tab_sec7" data-toggle="tab" style="margin-left:-50%" class="btn btn-default">Add Card</a>
-                                                </div>
-                                            </div>
-
-                                            <input class="medium-input border-radius-4" data-email="required" id="" name="dich-vu-2" placeholder="Dịch vụ 2" type="text" />
-                                            <div class="row">
-                                                <div class="col-md-4 col-md-offset-0">
-                                                    <input class="medium-input border-radius-4" data-email="required" id="" name="dich-vu-2-number" placeholder="Number of cards" type="text" />
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <a href="#tab_sec8" data-toggle="tab" style="margin-left:-50%" class="btn btn-default">Add Card</a>
-                                                </div>
-                                            </div>
-
-                                            <input class="medium-input border-radius-4" data-email="required" id="" name="dich-vu-3" placeholder="Dịch vụ 3" type="text" />
-                                            <div class="row">
-                                                <div class="col-md-4 col-md-offset-0">
-                                                    <input class="medium-input border-radius-4" data-email="required" id="" name="dich-vu-3-number" placeholder="Number of cards" type="text" />
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <a href="#tab_sec9" data-toggle="tab" style="margin-left:-50%" class="btn btn-default">Add Card</a>
-                                                </div>
-                                            </div>
+                                            {{#each doc.data_dialog.2.content}}
+                                                <input class="medium-input border-radius-4" data-email="required" id="" name="thu-cung-{{inc @index}}" placeholder="Thú cưng 1" type="text" value="{{this.childDialogName}}"/>
+                                                    <div class="row">
+                                                        <div class="col-md-4 col-md-offset-0">
+                                                            <input class="medium-input border-radius-4" data-email="required" id="" name="thu-cung-1-number" placeholder="Number of cards" type="text" value="{{this.pagination}}"/>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <a href="#tab_sec{{inc @index 6}}" data-toggle="tab" style="margin-left:-50%" class="btn btn-default">Add Card</a>
+                                                        </div>
+                                                    </div>
+                                            {{/each}}
                                         </div>
                                     </div>
 
@@ -145,1149 +90,90 @@
                         <!-- end tab content -->
 
                         {{!-- Thu cung --}}
-                        <!-- tab content -->     
-                        <div class="tab-pane fade in" id="tab_sec1">
-                            <div class="row">
-                                <form action="javascript:void(0)" class="width-500" method="post">
-                                    <div class="row" style="width: 200%; margin-left: -50%; text-align: left" >
-                                        <div class="col-md-4">
-                                            Card 1
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-1-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-1-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-1-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-1-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-1-link" placeholder="Button Link" type="text" />
+                        <!-- tab content -->    
+                        {{#times 1 3}}
+                            <div class="tab-pane fade in" id="tab_sec{{this}}">
+                                <div class="row">
+                                    <form action="javascript:void(0)" class="width-500" method="post">
+                                        <div class="row" style="width: 200%; margin-left: -50%; text-align: left" >
+                                            {{#times 1 12}}
+                                                <div class="col-md-4">
+                                                    Card {{this}}
+                                                    <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-{{@../this}}-{{this}}-title" placeholder="Title" type="text" />
+                                                    <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-{{@../this}}-{{this}}-desctiption" placeholder="Description" type="text" />
+                                                    <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-{{@../this}}-{{this}}-thumbnail" placeholder="Thumbnail Image" type="text" />
+                                                    <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-{{@../this}}-{{this}}-button" placeholder="Button Text" type="text" />
+                                                    <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-{{@../this}}-{{this}}-link" placeholder="Button Link" type="text" />
+                                                </div>
+                                            {{/times}}
                                         </div>
-                                        <div class="col-md-4">
-                                            Card 2
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-2-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-2-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-2-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-2-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-2-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 3
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-3-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-3-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-3-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-3-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-3-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                    </div>
-                                    <div style="border-bottom: 1px solid #bb4444; margin-bottom: 15px"></div>
-
-                                    <div class="row" style="width: 200%; margin-left: -50%; text-align: left" >
-                                        <div class="col-md-4">
-                                            Card 4
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-4-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-4-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-4-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-4-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-4-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 5
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-5-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-5-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-5-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-5-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-5-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 6
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-6-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-6-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-6-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-6-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-6-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                    </div>
-                                    <div style="border-bottom: 1px solid #bb4444; margin-bottom: 15px"></div>
-
-                                    <div class="row" style="width: 200%; margin-left: -50%; text-align: left" >
-                                        <div class="col-md-4">
-                                            Card 7
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-7-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-7-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-7-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-7-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-7-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 8
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-8-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-8-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-8-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-8-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-8-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 9
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-9-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-9-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-9-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-9-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-9-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                    </div>
-                                    <div style="border-bottom: 1px solid #bb4444; margin-bottom: 15px"></div>
-
-                                    <div class="row" style="width: 200%; margin-left: -50%; text-align: left" >
-                                        <div class="col-md-4">
-                                            Card 10
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-10-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-10-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-10-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-10-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-10-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 11
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-11-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-11-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-11-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-11-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-11-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 12
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-12-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-12-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-12-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-12-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-1-12-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                    </div>
-                                    <div style="border-bottom: 1px solid #bb4444; margin-bottom: 15px"></div>
-                                    
-                                    <a href="#tab_sec0" data-toggle="tab" class="tz_submit btn-medium btn-circle btn bg-light-gray text-white tz-text" style="width: 50%">
-                                       Back</a>
-                                       <br><br>
-                                    <button class="tz_submit btn-medium btn-circle btn bg-medium-green text-white tz-text" id="sub-thu-cung-1" style="width: 50%" type="submit">
-                                        Save
-                                    </button>
-                                </form>
+                                        <a href="#tab_sec0" data-toggle="tab" class="tz_submit btn-medium btn-circle btn bg-light-gray text-white tz-text" style="width: 50%">
+                                        Back</a>
+                                        <br><br>
+                                        <button class="tz_submit btn-medium btn-circle btn bg-medium-green text-white tz-text" id="sub-thu-cung-1" style="width: 50%" type="submit">
+                                            Save
+                                        </button>
+                                    </form>
+                                </div>
                             </div>
-                        </div>
-                        <!-- end tab content -->
-
-                        <!-- tab content -->
-                        <div class="tab-pane fade in" id="tab_sec2">
-                            <div class="row">
-                                <form action="javascript:void(0)" class="width-500" method="post">
-                                    <div class="row" style="width: 200%; margin-left: -50%; text-align: left" >
-                                        <div class="col-md-4">
-                                            Card 1
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-1-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-1-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-1-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-1-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-1-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 2
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-2-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-2-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-2-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-2-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-2-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 3
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-3-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-3-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-3-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-3-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-3-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                    </div>
-                                    <div style="border-bottom: 1px solid #bb4444; margin-bottom: 15px"></div>
-
-                                    <div class="row" style="width: 200%; margin-left: -50%; text-align: left" >
-                                        <div class="col-md-4">
-                                            Card 4
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-4-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-4-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-4-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-4-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-4-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 5
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-5-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-5-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-5-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-5-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-5-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 6
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-6-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-6-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-6-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-6-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-6-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                    </div>
-                                    <div style="border-bottom: 1px solid #bb4444; margin-bottom: 15px"></div>
-
-                                    <div class="row" style="width: 200%; margin-left: -50%; text-align: left" >
-                                        <div class="col-md-4">
-                                            Card 7
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-7-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-7-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-7-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-7-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-7-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 8
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-8-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-8-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-8-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-8-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-8-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 9
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-9-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-9-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-9-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-9-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-9-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                    </div>
-                                    <div style="border-bottom: 1px solid #bb4444; margin-bottom: 15px"></div>
-
-                                    <div class="row" style="width: 200%; margin-left: -50%; text-align: left" >
-                                        <div class="col-md-4">
-                                            Card 10
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-10-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-10-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-10-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-10-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-10-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 11
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-11-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-11-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-11-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-11-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-11-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 12
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-12-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-12-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-12-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-12-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-2-12-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                    </div>
-                                    <div style="border-bottom: 1px solid #bb4444; margin-bottom: 15px"></div>
-                                    
-                                    <a href="#tab_sec0" data-toggle="tab" class="tz_submit btn-medium btn-circle btn bg-light-gray text-white tz-text" style="width: 50%">
-                                       Back</a>
-                                       <br><br>
-                                    <button class="tz_submit btn-medium btn-circle btn bg-medium-green text-white tz-text" id="sub-thu-cung-2" style="width: 50%" type="submit">
-                                        Save
-                                    </button>
-                                </form>
+                        {{/times}}
+                        
+                        {{#times 4 6}}
+                            <div class="tab-pane fade in" id="tab_sec{{this}}">
+                                <div class="row">
+                                    <form action="javascript:void(0)" class="width-500" method="post">
+                                        <div class="row" style="width: 200%; margin-left: -50%; text-align: left" >
+                                            {{#times 1 12}}
+                                            <div class="col-md-4">
+                                                Card {{this}}
+                                                <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-{{inc @../this -4}}-{{this}}-title" placeholder="Title" type="text" />
+                                                <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-{{inc @../this -4}}-{{this}}-desctiption" placeholder="Description" type="text" />
+                                                <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-{{inc @../this -4}}-{{this}}-thumbnail" placeholder="Thumbnail Image" type="text" />
+                                                <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-{{inc @../this -4}}-{{this}}-button" placeholder="Button Text" type="text" />
+                                                <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-{{inc @../this -4}}-{{this}}-link" placeholder="Button Link" type="text" />
+                                            </div>
+                                            {{/times}}
+                                        </div>  
+                                        <a href="#tab_sec0" data-toggle="tab" class="tz_submit btn-medium btn-circle btn bg-light-gray text-white tz-text" style="width: 50%">
+                                        Back</a>
+                                        <br><br>
+                                        <button class="tz_submit btn-medium btn-circle btn bg-medium-green text-white tz-text" id="sub-san-pham-1" style="width: 50%" type="submit">
+                                            Save
+                                        </button>
+                                    </form>
+                                </div>
                             </div>
-                        </div>
-                        <!-- end tab content -->
-
-                        <!-- tab content -->
-                        <div class="tab-pane fade in" id="tab_sec3">
-                            <div class="row">
-                                <form action="javascript:void(0)" class="width-500" method="post">
-                                    <div class="row" style="width: 200%; margin-left: -50%; text-align: left" >
-                                        <div class="col-md-4">
-                                            Card 1
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-1-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-1-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-1-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-1-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-1-button" placeholder="Button Link" type="text" />
+                        {{/times}}
+                        
+                        {{#times 7 9}}
+                            <div class="tab-pane fade in" id="tab_sec{{this}}">
+                                <div class="row">
+                                    <form action="javascript:void(0)" class="width-500" method="post">
+                                        <div class="row" style="width: 200%; margin-left: -50%; text-align: left" >
+                                            {{#times 1 12}}
+                                            <div class="col-md-4">
+                                                Card {{this}}
+                                                <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-{{inc @../this -7}}-{{this}}-title" placeholder="Title" type="text" />
+                                                <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-{{inc @../this -7}}-{{this}}-desctiption" placeholder="Description" type="text" />
+                                                <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-{{inc @../this -7}}-{{this}}-thumbnail" placeholder="Thumbnail Image" type="text" />
+                                                <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-{{inc @../this -7}}-{{this}}-button" placeholder="Button Text" type="text" />
+                                                <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-{{inc @../this -7}}-{{this}}-link" placeholder="Button Link" type="text" />
+                                            </div>
+                                             {{/times}}
                                         </div>
-                                        <div class="col-md-4">
-                                            Card 2
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-2-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-2-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-2-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-2-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-2-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 3
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-3-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-3-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-3-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-3-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-3-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                    </div>
-                                    <div style="border-bottom: 1px solid #bb4444; margin-bottom: 15px"></div>
-
-                                    <div class="row" style="width: 200%; margin-left: -50%; text-align: left" >
-                                        <div class="col-md-4">
-                                            Card 4
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-4-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-4-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-4-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-4-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-4-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 5
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-5-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-5-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-5-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-5-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-5-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 6
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-6-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-6-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-6-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-6-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-6-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                    </div>
-                                    <div style="border-bottom: 1px solid #bb4444; margin-bottom: 15px"></div>
-
-                                    <div class="row" style="width: 200%; margin-left: -50%; text-align: left" >
-                                        <div class="col-md-4">
-                                            Card 7
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-7-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-7-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-7-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-7-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-7-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 8
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-8-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-8-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-8-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-8-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-8-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 9
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-9-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-9-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-9-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-9-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-9-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                    </div>
-                                    <div style="border-bottom: 1px solid #bb4444; margin-bottom: 15px"></div>
-
-                                    <div class="row" style="width: 200%; margin-left: -50%; text-align: left" >
-                                        <div class="col-md-4">
-                                            Card 10
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-10-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-10-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-10-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-10-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-10-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 11
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-11-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-11-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-11-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-11-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-11-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 12
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-12-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-12-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-12-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-12-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-3-12-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                    </div>
-                                    <div style="border-bottom: 1px solid #bb4444; margin-bottom: 15px"></div>
-                                    
-                                    <a href="#tab_sec0" data-toggle="tab" class="tz_submit btn-medium btn-circle btn bg-light-gray text-white tz-text" style="width: 50%">
-                                       Back</a>
-                                       <br><br>
-                                    <button class="tz_submit btn-medium btn-circle btn bg-medium-green text-white tz-text" id="sub-thu-cung-3" style="width: 50%" type="submit">
-                                        Save
-                                    </button>
-                                </form>
+                                        
+                                        <a href="#tab_sec0" data-toggle="tab" class="tz_submit btn-medium btn-circle btn bg-light-gray text-white tz-text" style="width: 50%">
+                                        Back</a>
+                                        <br><br>
+                                        <button class="tz_submit btn-medium btn-circle btn bg-medium-green text-white tz-text" id="sub-dich-vu-1" style="width: 50%" type="submit">
+                                            Save
+                                        </button>
+                                    </form>
+                                </div>
                             </div>
-                        </div>
-                        <!-- end tab content -->
-
-                        <!-- tab content -->
-                        <div class="tab-pane fade in" id="tab_sec4">
-                            <div class="row">
-                                <form action="javascript:void(0)" class="width-500" method="post">
-                                    <div class="row" style="width: 200%; margin-left: -50%; text-align: left" >
-                                        <div class="col-md-4">
-                                            Card 1
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-1-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-1-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-1-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-1-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-1-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 2
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-2-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-2-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-2-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-2-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-2-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 3
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-3-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-3-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-3-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-3-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-3-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                    </div>
-                                    <div style="border-bottom: 1px solid #bb4444; margin-bottom: 15px"></div>
-
-                                    <div class="row" style="width: 200%; margin-left: -50%; text-align: left" >
-                                        <div class="col-md-4">
-                                            Card 4
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-4-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-4-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-4-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-4-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-4-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 5
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-5-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-5-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-5-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-5-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-5-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 6
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-6-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-6-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-6-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-6-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-6-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                    </div>
-                                    <div style="border-bottom: 1px solid #bb4444; margin-bottom: 15px"></div>
-
-                                    <div class="row" style="width: 200%; margin-left: -50%; text-align: left" >
-                                        <div class="col-md-4">
-                                            Card 7
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-7-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-7-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-7-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-7-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-7-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 8
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-8-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-8-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-8-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-8-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-8-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 9
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-9-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-9-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-9-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-9-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-9-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                    </div>
-                                    <div style="border-bottom: 1px solid #bb4444; margin-bottom: 15px"></div>
-
-                                    <div class="row" style="width: 200%; margin-left: -50%; text-align: left" >
-                                        <div class="col-md-4">
-                                            Card 10
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-10-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-10-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-10-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-10-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-10-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 11
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-11-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-11-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-11-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-11-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-11-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 12
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-12-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-12-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-12-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-12-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-1-12-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                    </div>
-                                    <div style="border-bottom: 1px solid #bb4444; margin-bottom: 15px"></div>
-                                    
-                                    <a href="#tab_sec0" data-toggle="tab" class="tz_submit btn-medium btn-circle btn bg-light-gray text-white tz-text" style="width: 50%">
-                                       Back</a>
-                                       <br><br>
-                                    <button class="tz_submit btn-medium btn-circle btn bg-medium-green text-white tz-text" id="sub-san-pham-1" style="width: 50%" type="button">
-                                        Save
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-                        <!-- end tab content -->
-
-                        <!-- tab content -->
-                        <div class="tab-pane fade in" id="tab_sec5">
-                            <div class="row">
-                                <form action="javascript:void(0)" class="width-500" method="post">
-                                    <div class="row" style="width: 200%; margin-left: -50%; text-align: left" >
-                                        <div class="col-md-4">
-                                            Card 1
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-1-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-1-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-1-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-1-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-1-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 2
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-2-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-2-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-2-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-2-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-2-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 3
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-3-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-3-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-3-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-3-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-3-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                    </div>
-                                    <div style="border-bottom: 1px solid #bb4444; margin-bottom: 15px"></div>
-
-                                    <div class="row" style="width: 200%; margin-left: -50%; text-align: left" >
-                                        <div class="col-md-4">
-                                            Card 4
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-4-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-4-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-4-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-4-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-4-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 5
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-5-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-5-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-5-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-5-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-5-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 6
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-6-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-6-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-6-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-6-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-6-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                    </div>
-                                    <div style="border-bottom: 1px solid #bb4444; margin-bottom: 15px"></div>
-
-                                    <div class="row" style="width: 200%; margin-left: -50%; text-align: left" >
-                                        <div class="col-md-4">
-                                            Card 7
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-7-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-7-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-7-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-7-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-7-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 8
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-8-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-8-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-8-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-8-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-8-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 9
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-9-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-9-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-9-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-9-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-9-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                    </div>
-                                    <div style="border-bottom: 1px solid #bb4444; margin-bottom: 15px"></div>
-
-                                    <div class="row" style="width: 200%; margin-left: -50%; text-align: left" >
-                                        <div class="col-md-4">
-                                            Card 10
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-10-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-10-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-10-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-10-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-10-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 11
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-11-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-11-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-11-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-11-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-11-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 12
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-12-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-12-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-12-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-12-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-2-12-link" placeholder="Button Link" type="text" />
-                                        </div>
-                                    </div>
-                                    <div style="border-bottom: 1px solid #bb4444; margin-bottom: 15px"></div>
-                                    
-                                    <a href="#tab_sec0" data-toggle="tab" class="tz_submit btn-medium btn-circle btn bg-light-gray text-white tz-text" style="width: 50%">
-                                       Back</a>
-                                       <br><br>
-                                    <button class="tz_submit btn-medium btn-circle btn bg-medium-green text-white tz-text" id="sub-san-pham-2" style="width: 50%" type="submit">
-                                        Save
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-                        <!-- end tab content -->
-
-                        <!-- tab content -->
-                        <div class="tab-pane fade in" id="tab_sec6">
-                            <div class="row">
-                                <form action="javascript:void(0)" class="width-500" method="post">
-                                    <div class="row" style="width: 200%; margin-left: -50%; text-align: left" >
-                                        <div class="col-md-4">
-                                            Card 1
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-1-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-1-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-1-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-1-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-1-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 2
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-2-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-2-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-2-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-2-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-2-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 3
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-3-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-3-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-3-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-3-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-3-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                    </div>
-                                    <div style="border-bottom: 1px solid #bb4444; margin-bottom: 15px"></div>
-
-                                    <div class="row" style="width: 200%; margin-left: -50%; text-align: left" >
-                                        <div class="col-md-4">
-                                            Card 4
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-4-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-4-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-4-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-4-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-4-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 5
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-5-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-5-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-5-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-5-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-5-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 6
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-6-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-6-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-6-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-6-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-6-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                    </div>
-                                    <div style="border-bottom: 1px solid #bb4444; margin-bottom: 15px"></div>
-
-                                    <div class="row" style="width: 200%; margin-left: -50%; text-align: left" >
-                                        <div class="col-md-4">
-                                            Card 7
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-7-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-7-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-7-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-7-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-7-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 8
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-8-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-8-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-8-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-8-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-8-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 9
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-9-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-9-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-9-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-9-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-9-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                    </div>
-                                    <div style="border-bottom: 1px solid #bb4444; margin-bottom: 15px"></div>
-
-                                    <div class="row" style="width: 200%; margin-left: -50%; text-align: left" >
-                                        <div class="col-md-4">
-                                            Card 10
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-10-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-10-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-10-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-10-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-10-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 11
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-11-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-11-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-11-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-11-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-11-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 12
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-12-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-12-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-12-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-12-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-san-pham-3-12-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                    </div>
-                                    <div style="border-bottom: 1px solid #bb4444; margin-bottom: 15px"></div>
-                                    
-                                    <a href="#tab_sec0" data-toggle="tab" class="tz_submit btn-medium btn-circle btn bg-light-gray text-white tz-text" style="width: 50%">
-                                       Back</a>
-                                       <br><br>
-                                    <button class="tz_submit btn-medium btn-circle btn bg-medium-green text-white tz-text" id="sub-san-pham-3" style="width: 50%" type="submit">
-                                        Save
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-                        <!-- end tab content -->
-
-                        <!-- tab content -->
-                        <div class="tab-pane fade in" id="tab_sec7">
-                            <div class="row">
-                                <form action="javascript:void(0)" class="width-500" method="post">
-                                    <div class="row" style="width: 200%; margin-left: -50%; text-align: left" >
-                                        <div class="col-md-4">
-                                            Card 1
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-1-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-1-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-1-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-1-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-1-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 2
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-2-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-2-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-2-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-2-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-2-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 3
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-3-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-3-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-3-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-3-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-3-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                    </div>
-                                    <div style="border-bottom: 1px solid #bb4444; margin-bottom: 15px"></div>
-
-                                    <div class="row" style="width: 200%; margin-left: -50%; text-align: left" >
-                                        <div class="col-md-4">
-                                            Card 4
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-4-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-4-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-4-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-4-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-4-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 5
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-5-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-5-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-5-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-5-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-5-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 6
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-6-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-6-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-6-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-6-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-6-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                    </div>
-                                    <div style="border-bottom: 1px solid #bb4444; margin-bottom: 15px"></div>
-
-                                    <div class="row" style="width: 200%; margin-left: -50%; text-align: left" >
-                                        <div class="col-md-4">
-                                            Card 7
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-7-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-7-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-7-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-7-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-7-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 8
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-8-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-8-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-8-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-8-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-8-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 9
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-9-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-9-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-9-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-9-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-9-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                    </div>
-                                    <div style="border-bottom: 1px solid #bb4444; margin-bottom: 15px"></div>
-
-                                    <div class="row" style="width: 200%; margin-left: -50%; text-align: left" >
-                                        <div class="col-md-4">
-                                            Card 10
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-10-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-10-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-10-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-10-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-10-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 11
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-11-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-11-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-11-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-11-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-11-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 12
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-12-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-12-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-12-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-12-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-1-12-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                    </div>
-                                    <div style="border-bottom: 1px solid #bb4444; margin-bottom: 15px"></div>
-                                    
-                                    <a href="#tab_sec0" data-toggle="tab" class="tz_submit btn-medium btn-circle btn bg-light-gray text-white tz-text" style="width: 50%">
-                                       Back</a>
-                                       <br><br>
-                                    <button class="tz_submit btn-medium btn-circle btn bg-medium-green text-white tz-text" id="sub-dich-vu-1" style="width: 50%" type="submit">
-                                        Save
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-                        <!-- end tab content -->
-
-                        <!-- tab content -->
-                        <div class="tab-pane fade in" id="tab_sec8">
-                            <div class="row">
-                                <form action="javascript:void(0)" class="width-500" method="post">
-                                    <div class="row" style="width: 200%; margin-left: -50%; text-align: left" >
-                                        <div class="col-md-4">
-                                            Card 1
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-1-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-1-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-1-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-1-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-1-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 2
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-2-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-2-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-2-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-2-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-2-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 3
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-3-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-3-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-3-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-3-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-3-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                    </div>
-                                    <div style="border-bottom: 1px solid #bb4444; margin-bottom: 15px"></div>
-
-                                    <div class="row" style="width: 200%; margin-left: -50%; text-align: left" >
-                                        <div class="col-md-4">
-                                            Card 4
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-4-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-4-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-4-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-4-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-4-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 5
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-5-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-5-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-5-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-5-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-5-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 6
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-6-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-6-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-6-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-6-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-6-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                    </div>
-                                    <div style="border-bottom: 1px solid #bb4444; margin-bottom: 15px"></div>
-
-                                    <div class="row" style="width: 200%; margin-left: -50%; text-align: left" >
-                                        <div class="col-md-4">
-                                            Card 7
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-7-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-7-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-7-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-7-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-7-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 8
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-8-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-8-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-8-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-8-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-8-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 9
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-9-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-9-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-9-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-9-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-9-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                    </div>
-                                    <div style="border-bottom: 1px solid #bb4444; margin-bottom: 15px"></div>
-
-                                    <div class="row" style="width: 200%; margin-left: -50%; text-align: left" >
-                                        <div class="col-md-4">
-                                            Card 10
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-10-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-10-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-10-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-10-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-10-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 11
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-11-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-11-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-11-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-11-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-11-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 12
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-12-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-12-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-12-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-12-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-2-12-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                    </div>
-                                    <div style="border-bottom: 1px solid #bb4444; margin-bottom: 15px"></div>
-                                    
-                                    <a href="#tab_sec0" data-toggle="tab" class="tz_submit btn-medium btn-circle btn bg-light-gray text-white tz-text" style="width: 50%">
-                                       Back</a>
-                                       <br><br>
-                                    <button class="tz_submit btn-medium btn-circle btn bg-medium-green text-white tz-text" id="sub-dich-vu-2" style="width: 50%" type="submit">
-                                        Save
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-                        <!-- end tab content -->
-
-                        <!-- tab content -->
-                        <div class="tab-pane fade in" id="tab_sec9">
-                            <div class="row">
-                                <form action="javascript:void(0)" class="width-500" method="post">
-                                    <div class="row" style="width: 200%; margin-left: -50%; text-align: left" >
-                                        <div class="col-md-4">
-                                            Card 1
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-1-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-1-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-1-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-1-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-1-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 2
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-2-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-2-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-2-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-2-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-2-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 3
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-3-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-3-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-3-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-3-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-3-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                    </div>
-                                    <div style="border-bottom: 1px solid #bb4444; margin-bottom: 15px"></div>
-
-                                    <div class="row" style="width: 200%; margin-left: -50%; text-align: left" >
-                                        <div class="col-md-4">
-                                            Card 4
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-4-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-4-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-4-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-4-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-4-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 5
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-5-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-5-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-5-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-5-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-5-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 6
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-6-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-6-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-6-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-6-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-6-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                    </div>
-                                    <div style="border-bottom: 1px solid #bb4444; margin-bottom: 15px"></div>
-
-                                    <div class="row" style="width: 200%; margin-left: -50%; text-align: left" >
-                                        <div class="col-md-4">
-                                            Card 7
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-7-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-7-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-7-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-7-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-7-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 8
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-8-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-8-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-8-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-8-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-8-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 9
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-9-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-9-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-9-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-9-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-9-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                    </div>
-                                    <div style="border-bottom: 1px solid #bb4444; margin-bottom: 15px"></div>
-
-                                    <div class="row" style="width: 200%; margin-left: -50%; text-align: left" >
-                                        <div class="col-md-4">
-                                            Card 10
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-10-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-10-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-10-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-10-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-10-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 11
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-11-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-11-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-11-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-11-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-11-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                        <div class="col-md-4">
-                                            Card 12
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-12-title" placeholder="Title" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-12-desctiption" placeholder="Description" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-12-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-12-button" placeholder="Button Text" type="text" />
-                                            <input class="small-input border-radius-4" data-email="required" name="sub-dich-vu-3-12-button" placeholder="Button Link" type="text" />
-                                        </div>
-                                    </div>
-                                    <div style="border-bottom: 1px solid #bb4444; margin-bottom: 15px"></div>
-                                    
-                                    <a href="#tab_sec0" data-toggle="tab" class="tz_submit btn-medium btn-circle btn bg-light-gray text-white tz-text" style="width: 50%">
-                                       Back</a>
-                                       <br><br>
-                                    <button class="tz_submit btn-medium btn-circle btn bg-medium-green text-white tz-text" id="sub-dich-vu-3" style="width: 50%" type="submit">
-                                        Save
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-                        <!-- end tab content -->
-
+                        {{/times}}
+                        
+                    
                     </div>
                 </div>
             </div>
@@ -1302,7 +188,9 @@
 {{#contentFor "pageScripts"}}
     <script>
         $(document).ready(function($) {
-          console.log("                                   *********                           \n" +
+            {{!-- var doc = {{doc.data_dialog}} --}}
+            {{!-- console.log(doc) --}}
+          {{!-- console.log("                                   *********                           \n" +
                    "                             *******       *******                     \n" +
                    "                           ***                    ***                  \n" +
                    "                         **                         **                 \n" +
@@ -1328,7 +216,7 @@
                    "            *************************************************          \n" +
                    " " +
                    " Happy to see you here!" +
-                   " Contact me: quylk2906@gmail.com - 0963878723")
+                   " Contact me: quylk2906@gmail.com - 0963878723") --}}
         })
 
     </script>
@@ -1394,25 +282,27 @@
             }
 
             var parameters = {
+                _id: "sdsad",
                 megaData: megaData,
                 greetingMessage: greetingMessage
             };
             
             var json_text = JSON.stringify(parameters)
             $.ajax({
-                url: '/bot/demo-json',
+                url: '/bot/add_update',
                 type: 'post',
                 contentType: "application/json; charset=utf-8",
                 data: json_text,
                 dataType: 'json',
                 success: function(response) {
-                    console.log(response)
+                    let parse = JSON.parse(response)
+                    console.log(parse)
                 },
                 error: function() {
                     console.log('Something wrong')
                 }
             })
-            console.log(parameters)
+            //console.log(parameters)
         })
 
 

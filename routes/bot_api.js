@@ -15,19 +15,24 @@ router.get('/get-bot-data/:userID', function (req, res, next) {
 });
 
 
-router.post('/add_update/:userID', function (req, res, next) {
-    let _id = req.params.userID
-    let json = body.getDataFromRequest(req.body)
-    let botData = new BotController(json)
-    botData.findOneAndUpdate(_id)
+router.post('/add_update/', function (req, res, next) {
+    let botData = new BotController({
+        dataDialog: req.body["megaData"],
+        greetingMessage: req.body["greetingMessage"],
+        persistenMenu: {persistentMenu: "persistentMenu"},
+        proactiveMessage: "proactiveMessage",
+        card: {card: "card"}
+    })
+
+    let _id = "WYntWxcGRW"
+    botData.addNewData(botData)
         .then(result => res.send(result))
-        .catch(err => res.send(err))
+        .catch(err => {
+            console.log(err)
+            res.send(err)
+        })
 });
 
-router.post('/demo-json', function (req, res, next) {
-    let data = req.body
-    res.send(data)
-});
 // user=bEsJpygFb0
 
 module.exports = router;

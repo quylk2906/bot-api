@@ -27,7 +27,16 @@ app.engine('hbs', expressHbs.express4({
 }));
 
 // Set up Express HBS registerHelper
+expressHbs.registerHelper("inc", (value, by, options) => {
+  return parseInt(value + by) + 1
+})
 
+expressHbs.registerHelper('times', function(from, to, block) {
+  var accum = '';
+  for( var i = from; i <= to; ++i)
+      accum += block.fn(i);
+  return accum;
+});
 // Set up resources
 // app.use('/assets/css', express.static(__dirname + '/public/stylesheets'))
 // app.use('/assets/fonts', express.static(__dirname + '/public/fonts'))

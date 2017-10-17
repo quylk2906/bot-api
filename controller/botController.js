@@ -30,6 +30,11 @@ class BotController {
         return promise
     }
 
+    findOneByUserId(user_id) {
+        let promise = BotData.findOne({'user_id': user_id})
+        return promise
+    }
+    
     findOneAndUpdate(user_id) {
         let promise = BotData.findOneAndUpdate( {'user_id': user_id}, {
             $set: {
