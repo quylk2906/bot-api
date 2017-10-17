@@ -1345,6 +1345,7 @@
         
         $('#publish').click(function() {
             let megaData = []
+            let greetingMessage = $('textarea[name=greeting]').val()
             let thu_cung = $('#thu-cung').val()
             let san_pham = $('#san-pham').val()
             let dich_vu = $('#dich-vu').val()
@@ -1393,14 +1394,14 @@
             }
 
             var parameters = {
-                megaData: megaData
+                megaData: megaData,
+                greetingMessage: greetingMessage
             };
-            var json_text = JSON.stringify(megaData)
+            
+            var json_text = JSON.stringify(parameters)
             $.ajax({
                 url: '/bot/demo-json',
                 type: 'post',
-                // async: false,
-                // contentType: "application/json",
                 contentType: "application/json; charset=utf-8",
                 data: json_text,
                 dataType: 'json',
@@ -1411,7 +1412,7 @@
                     console.log('Something wrong')
                 }
             })
-            console.log(megaData)
+            console.log(parameters)
         })
 
 

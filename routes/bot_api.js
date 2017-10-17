@@ -24,10 +24,8 @@ router.post('/add_update/:userID', function (req, res, next) {
         .catch(err => res.send(err))
 });
 
-var xx = []
 router.post('/demo-json', function (req, res, next) {
     let data = req.body
-    console.log(data)
     res.send(data)
 });
 // user=bEsJpygFb0
