@@ -99,11 +99,13 @@
                                             {{#times 1 12}}
                                                 <div class="col-md-4">
                                                     Card {{this}}
-                                                    <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-{{@../this}}-{{this}}-title" placeholder="Title" type="text" />
-                                                    <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-{{@../this}}-{{this}}-desctiption" placeholder="Description" type="text" />
-                                                    <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-{{@../this}}-{{this}}-thumbnail" placeholder="Thumbnail Image" type="text" />
-                                                    <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-{{@../this}}-{{this}}-button" placeholder="Button Text" type="text" />
-                                                    <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-{{@../this}}-{{this}}-link" placeholder="Button Link" type="text" />
+                                                    <input class="small-input border-radius-4" data-email="required" 
+                                                    name="sub-thu-cung-{{@../this}}-{{this}}-title" placeholder="Title" type="text" value="{{../data1.[0].["content"].dialogName}}" />
+                                                    <input class="small-input border-radius-4" data-email="required" 
+                                                    name="sub-thu-cung-{{@../this}}-{{this}}-desctiption" placeholder="Description" type="text" value="" />
+                                                    <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-{{@../this}}-{{this}}-thumbnail" placeholder="Thumbnail Image" type="text" value="" />
+                                                    <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-{{@../this}}-{{this}}-button" placeholder="Button Text" type="text" value="" />
+                                                    <input class="small-input border-radius-4" data-email="required" name="sub-thu-cung-{{@../this}}-{{this}}-link" placeholder="Button Link" type="text" value="" />
                                                 </div>
                                             {{/times}}
                                         </div>
@@ -188,9 +190,9 @@
 {{#contentFor "pageScripts"}}
     <script>
         $(document).ready(function($) {
-            {{!-- var doc = {{doc.data_dialog}} --}}
-            {{!-- console.log(doc) --}}
-          {{!-- console.log("                                   *********                           \n" +
+            var doc = []
+            console.log(doc)
+            /*console.log("                                   *********                           \n" +
                    "                             *******       *******                     \n" +
                    "                           ***                    ***                  \n" +
                    "                         **                         **                 \n" +
@@ -216,7 +218,9 @@
                    "            *************************************************          \n" +
                    " " +
                    " Happy to see you here!" +
-                   " Contact me: quylk2906@gmail.com - 0963878723") --}}
+                   " Contact me: quylk2906@gmail.com - 0963878723")
+
+                   */
         })
 
     </script>

@@ -31,6 +31,10 @@ expressHbs.registerHelper("inc", (value, by, options) => {
   return parseInt(value + by) + 1
 })
 
+expressHbs.registerHelper('index_of', function(context,ndx) {
+  return context[ndx];
+});
+
 expressHbs.registerHelper('times', function(from, to, block) {
   var accum = '';
   for( var i = from; i <= to; ++i)
