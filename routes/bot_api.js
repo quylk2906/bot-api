@@ -24,13 +24,17 @@ router.post('/add_update/', function (req, res, next) {
         card: {card: "card"}
     })
 
-    let _id = "WYntWxcGRW"
-    botData.addNewData(botData)
-        .then(result => res.send(result))
+    let _id = "l7YNn4M5zX"
+    botData.findOneAndUpdate(_id)
+        .then(result => {
+            console.log(result)
+            res.send({"messgae": "ok"})
+        })
         .catch(err => {
             console.log(err)
             res.send(err)
         })
+    // res.send(req.body)
 });
 
 // user=bEsJpygFb0

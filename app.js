@@ -9,7 +9,7 @@ const expressFlash = require('express-flash-2')
 const session = require('express-session')
 const passport = require('passport')
 const mongoStore = require('connect-mongo')(session)
-const {mongoose} = require('./database/mongoose')
+const { mongoose } = require('./database/mongoose')
 
 var index = require('./routes/index_api');
 var users = require('./routes/users_api');
@@ -31,14 +31,21 @@ expressHbs.registerHelper("inc", (value, by, options) => {
   return parseInt(value + by) + 1
 })
 
-expressHbs.registerHelper('index_of', function(context,ndx) {
-  return context[ndx];
+expressHbs.registerHelper('json', function (context) {
+  return JSON.stringify(context);
 });
 
-expressHbs.registerHelper('times', function(from, to, block) {
+expressHbs.registerHelper('ifCond', function(v1, v2, options) {
+  if(v1 === v2) {
+    return options.fn(this);
+  }
+  return options.inverse(this);
+});
+
+expressHbs.registerHelper('times', function (from, to, block) {
   var accum = '';
-  for( var i = from; i <= to; ++i)
-      accum += block.fn(i);
+  for (var i = from; i <= to; ++i)
+    accum += block.fn(i);
   return accum;
 });
 // Set up resources
