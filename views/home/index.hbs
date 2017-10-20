@@ -27,43 +27,52 @@
                             <div class="row">
                                 <form action="/bot/add_update/vIJQh69U0r" class="width-100" method="post">
                                     <textarea class="medium-input border-radius-4" style="height: 150px" data-email="required" id="greeting" name="greeting" placeholder="*Your Greeting Message" type="text">{{doc.greeting_message}}</textarea>
-                                    <input class="medium-input border-radius-4" data-email="required" id="" name="dialog-parent-0" placeholder="* Thú cưng" type="text" value="{{doc.data_dialog.0.dialogName}}"/>
-                                    <div class="row">
-                                        <div class="col-md-11 col-md-offset-1"> 
-                                        {{#if doc}}
-                                            {{#each doc.data_dialog.0.content}}
-                                            <input class="medium-input border-radius-4" data-email="required" id="" name="dialog-sub-{{inc @index 0}}-title" placeholder="Dialog {{@index}}" type="text" value="{{this.childDialogName}}"/>
-                                            <div class="row">
-                                                <div class="col-md-4 col-md-offset-0">
-                                                    <input class="medium-input border-radius-4" data-email="required" id="" name="dialog-sub-{{inc @index 0}}-number" placeholder="Number of cards" type="text" value="{{this.pagination}}"/>
+                                    
+                                    <a class="inner-link" href="#" style="float: left; color: red" id="dialog-1">Add</a>
+                                    <div class="{{#unless doc.data_dialog.0.content}}hide{{/unless}} dialog-1">
+                                        <input class="medium-input border-radius-4" data-email="required" id="" name="dialog-parent-0" placeholder="* Thú cưng" type="text" value="{{doc.data_dialog.0.dialogName}}"/>
+                                        <div class="row ">
+                                            <div class="col-md-11 col-md-offset-1"> 
+                                            {{#if doc}}
+                                                {{#each doc.data_dialog.0.content}}
+                                                <div class="{{#unless this}}hide{{/unless}}">
+                                                <input class="medium-input border-radius-4" data-email="required" id="" name="dialog-sub-{{inc @index 0}}-title" placeholder="Dialog {{@index}}" type="text" value="{{this.childDialogName}}"/>
+                                                <div class="row">
+                                                    <div class="col-md-4 col-md-offset-0">
+                                                        <input class="medium-input border-radius-4" data-email="required" id="" name="dialog-sub-{{inc @index 0}}-number" placeholder="Number of cards" type="text" value="{{this.pagination}}"/>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <a href="#tab_sec{{inc @index 0}}" data-toggle="tab" style="margin-left:-50%" class="btn btn-default">Add Card</a>
+                                                    </div>
                                                 </div>
-                                                <div class="col-md-4">
-                                                    <a href="#tab_sec{{inc @index 0}}" data-toggle="tab" style="margin-left:-50%" class="btn btn-default">Add Card</a>
                                                 </div>
+                                                {{/each}} 
+                                            {{else}}
+                                                {{#times 1 3}} 
+                                                <input class="medium-input border-radius-4" data-email="required" id="" name="dialog-sub-{{this}}-title" placeholder="Dialog {{this}}" type="text" value="{{this.childDialogName}}"/>
+                                                <div class="row">
+                                                    <div class="col-md-4 col-md-offset-0">
+                                                        <input class="medium-input border-radius-4" data-email="required" id="" name="dialog-sub-{{this}}-number" placeholder="Number of cards" type="text" value="{{this.pagination}}"/>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <a href="#tab_sec{{this}}" data-toggle="tab" style="margin-left:-50%" class="btn btn-default">Add Card</a>
+                                                    </div>
+                                                </div>
+                                                {{/times}}
+                                            {{/if}}     
                                             </div>
-                                            {{/each}} 
-                                        {{else}}
-                                            {{#times 1 3}} 
-                                            <input class="medium-input border-radius-4" data-email="required" id="" name="dialog-sub-{{this}}-title" placeholder="Dialog {{this}}" type="text" value="{{this.childDialogName}}"/>
-                                            <div class="row">
-                                                <div class="col-md-4 col-md-offset-0">
-                                                    <input class="medium-input border-radius-4" data-email="required" id="" name="dialog-sub-{{this}}-number" placeholder="Number of cards" type="text" value="{{this.pagination}}"/>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <a href="#tab_sec{{this}}" data-toggle="tab" style="margin-left:-50%" class="btn btn-default">Add Card</a>
-                                                </div>
-                                            </div>
-                                            {{/times}}
-                                        {{/if}}     
                                         </div>
                                     </div>
-
-                                   
+                                    
+                                    {{!-- </br></br> --}}
+                                    <a class="inner-link hide" href="#" style="float: left; color: red" id="dialog-2">Add</a>
+                                    <div class="{{#unless doc.data_dialog.1.content}}hide{{/unless}} dialog-2">
                                     <input class="medium-input border-radius-4" data-email="required" id="" name="dialog-parent-1" placeholder="* Sản phẩm" type="text" value="{{doc.data_dialog.1.dialogName}}"/>
                                     <div class="row">
                                         <div class="col-md-11 col-md-offset-1">
                                             {{#if doc}}
                                             {{#each doc.data_dialog.1.content}}
+                                                <div class="{{#unless this}}hide{{/unless}}">
                                                 <input class="medium-input border-radius-4" data-email="required" id="" name="dialog-sub-{{inc @index 3}}-title" placeholder="Dialog {{@index}}" type="text" value="{{this.childDialogName}}"/>
                                                 <div class="row">
                                                     <div class="col-md-4 col-md-offset-0">
@@ -72,6 +81,7 @@
                                                     <div class="col-md-4">
                                                         <a href="#tab_sec{{inc @index 3}}" data-toggle="tab" style="margin-left:-50%" class="btn btn-default">Add Card</a>
                                                     </div>
+                                                </div>
                                                 </div>
                                             {{/each}}
                                             {{else}}
@@ -89,12 +99,17 @@
                                             {{/if}}   
                                         </div>
                                     </div>
+                                    </div>
 
+                                    {{!-- </br></br> --}}
+                                    <a class="inner-link hide" href="#" style="float: left; color: red" id="dialog-3">Add</a>
+                                    <div class="{{#unless doc.data_dialog.2.content}}hide{{/unless}} dialog-3">
                                     <input class="medium-input border-radius-4" data-email="required" id="" name="dialog-parent-2" placeholder="* Dịch vụ" type="text" value="{{doc.data_dialog.2.dialogName}}"/>
                                     <div class="row">
                                         <div class="col-md-11 col-md-offset-1">
                                             {{#if doc}}
                                             {{#each doc.data_dialog.2.content}}
+                                                <div class="{{#unless this}}hide{{/unless}}">
                                                 <input class="medium-input border-radius-4" data-email="required" id="" name="dialog-sub-{{inc @index 6}}-title" placeholder="Dialog {{@index}}" type="text" value="{{this.childDialogName}}"/>
                                                 <div class="row">
                                                     <div class="col-md-4 col-md-offset-0">
@@ -104,23 +119,26 @@
                                                         <a href="#tab_sec{{inc @index 6}}" data-toggle="tab" style="margin-left:-50%" class="btn btn-default">Add Card</a>
                                                     </div>
                                                 </div>
+                                                </div>
                                             {{/each}}
                                             {{else}}
                                                 {{#times 7 9}} 
-                                                <input class="medium-input border-radius-4" data-email="required" id="" name="dialog-sub-{{this}}-title" placeholder="Dialog {{this}}" type="text" value="{{this.childDialogName}}"/>
+                                                <div class="">
+                                                <input class="medium-input border-radius-4" data-email="required" id="" name="dialog-sub-{{this}}-title" placeholder="Dialog {{this}}" type="text" value=""/>
                                                 <div class="row">
                                                     <div class="col-md-4 col-md-offset-0">
-                                                        <input class="medium-input border-radius-4" data-email="required" id="" name="dialog-sub-{{this}}-number" placeholder="Number of cards" type="text" value="{{this.pagination}}"/>
+                                                        <input class="medium-input border-radius-4" data-email="required" id="" name="dialog-sub-{{this}}-number" placeholder="Number of cards" type="text" value=""/>
                                                     </div>
                                                     <div class="col-md-4">
                                                         <a href="#tab_sec{{this}}" data-toggle="tab" style="margin-left:-50%" class="btn btn-default">Add Card</a>
                                                     </div>
                                                 </div>
+                                                </div>
                                                 {{/times}} 
                                             {{/if}}  
                                         </div>
                                     </div>
-                                    
+                                    </div>
                                     <button class="tz_submit btn-medium btn-circle btn bg-sky-blue text-white tz-text" id="publish" style="width: 90%" type="button">
                                        Publish
                                    </button>
@@ -155,12 +173,14 @@
         let content3 = JSON.parse({{{json data3}}})
 
         $(document).ready(function($) {
-            console.log(content1)
-            console.log(content2)
-            console.log(content3)
+            //console.log(content1)
+            //console.log(content2)
+            //console.log(content3)
+
             var html1 = ""
             var html2 = ""
             var html3 = ""
+            
             html1 = loop(0, 3, 1, content1)
             html2 = loop(0, 3, 4, content2)
             html3 = loop(0, 3, 7, content3) 
@@ -521,7 +541,39 @@
             console.log(data)
         })
 
+        $(document).on('click', '#dialog-1', function(){
+            if ($('.dialog-1').hasClass('hide')) {
+                $('.dialog-1').removeClass('hide')
+                $('#dialog-2').removeClass('hide')
+                $(this).text('Sub')
+            } else {
+                $('.dialog-1').addClass('hide')
+                $('#dialog-2').addClass('hide')
+                $(this).text('Add')
+            }
+        })
 
+        $(document).on('click', '#dialog-2', function(){
+            if ($('.dialog-2').hasClass('hide')) {
+                $('.dialog-2').removeClass('hide')
+                $('#dialog-3').removeClass('hide')
+                $(this).text('Sub')
+            } else {
+                $('.dialog-2').addClass('hide')
+                $('#dialog-3').addClass('hide')
+                $(this).text('Add')
+            }
+        })
+
+        $(document).on('click', '#dialog-3', function(){
+            if ($('.dialog-3').hasClass('hide')) {
+                $('.dialog-3').removeClass('hide')
+                $(this).text('Sub')
+            } else {
+                $('.dialog-3').addClass('hide')
+                $(this).text('Add')
+            }
+        })
 
     </script>
 {{/contentFor}}

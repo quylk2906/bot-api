@@ -14,6 +14,14 @@ router.get('/get-bot-data/:userID', function (req, res, next) {
         .catch(err => res.send(err))
 });
 
+router.get('/api/botdata/:userID', function (req, res, next) {
+    let _id = req.params.userID
+    let botData = new BotController({})
+    botData.getBotDataByID(_id)
+        .then(result => res.send(result))
+        .catch(err => res.send(err))
+});
+
 
 router.post('/add_update/', function (req, res, next) {
     let botData = new BotController({
@@ -24,7 +32,7 @@ router.post('/add_update/', function (req, res, next) {
         card: {card: "card"}
     })
 
-    let _id = "l7YNn4M5zX"
+    let _id = "xT9qHyPHiQ"
     botData.findOneAndUpdate(_id)
         .then(result => {
             console.log(result)
