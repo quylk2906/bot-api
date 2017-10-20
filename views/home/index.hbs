@@ -42,21 +42,25 @@
                                                         <input class="medium-input border-radius-4" data-email="required" id="" name="dialog-sub-{{inc @index 0}}-number" placeholder="Number of cards" type="text" value="{{this.pagination}}"/>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <a href="#tab_sec{{inc @index 0}}" data-toggle="tab" style="margin-left:-50%" data-id="{{inc @index 0}}" class="btn btn-default">Add Card</a>
+                                                        <a href="#tab_sec{{inc @index 0}}" data-toggle="tab" style="margin-left:-50%" class="btn btn-default">Add Card</a>
                                                     </div>
                                                 </div>
+                                                
                                                 </div>
                                                 {{/each}} 
                                             {{else}}
                                                 {{#times 1 3}} 
+                                                <div class="">
                                                 <input class="medium-input border-radius-4" data-email="required" id="" name="dialog-sub-{{this}}-title" placeholder="Dialog {{this}}" type="text" value="{{this.childDialogName}}"/>
                                                 <div class="row">
                                                     <div class="col-md-4 col-md-offset-0">
                                                         <input class="medium-input border-radius-4" data-email="required" id="" name="dialog-sub-{{this}}-number" placeholder="Number of cards" type="text" value="{{this.pagination}}"/>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <a href="#tab_sec{{this}}" data-toggle="tab" style="margin-left:-50%" data-id="{{this}}" class="btn btn-default">Add Card</a>
+                                                        <a href="#tab_sec{{this}}" data-toggle="tab" style="margin-left:-50%" class="btn btn-default">Add Card</a>
                                                     </div>
+                                                </div>
+                                                <a class="inner-link" href="#" style="float: left; color: red" id="dialog-1">Add</a>
                                                 </div>
                                                 {{/times}}
                                             {{/if}}     
@@ -79,7 +83,7 @@
                                                         <input class="medium-input border-radius-4" data-email="required" id="" name="dialog-sub-{{inc @index 3}}-number" placeholder="Number of cards" type="text" value="{{this.pagination}}"/>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <a href="#tab_sec{{inc @index 3}}" data-toggle="tab" style="margin-left:-50%" data-id="{{inc @index 3}}" class="btn btn-default">Add Card</a>
+                                                        <a href="#tab_sec{{inc @index 3}}" data-toggle="tab" style="margin-left:-50%" class="btn btn-default">Add Card</a>
                                                     </div>
                                                 </div>
                                                 </div>
@@ -92,7 +96,7 @@
                                                         <input class="medium-input border-radius-4" data-email="required" id="" name="dialog-sub-{{this}}-number" placeholder="Number of cards" type="text" value="{{this.pagination}}"/>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <a href="#tab_sec{{this}}" data-toggle="tab" style="margin-left:-50%" data-id="{{this}}" class="btn btn-default">Add Card</a>
+                                                        <a href="#tab_sec{{this}}" data-toggle="tab" style="margin-left:-50%" class="btn btn-default">Add Card</a>
                                                     </div>
                                                 </div>
                                                 {{/times}} 
@@ -116,7 +120,7 @@
                                                         <input class="medium-input border-radius-4" data-email="required" id="" name="dialog-sub-{{inc @index 6}}-number" placeholder="Number of cards" type="text" value="{{this.pagination}}"/>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <a href="#tab_sec{{inc @index 6}}" data-toggle="tab" style="margin-left:-50%" data-id="{{inc @index 6}}" class="btn btn-default">Add Card</a>
+                                                        <a href="#tab_sec{{inc @index 6}}" data-toggle="tab" style="margin-left:-50%" class="btn btn-default">Add Card</a>
                                                     </div>
                                                 </div>
                                                 </div>
@@ -130,7 +134,7 @@
                                                         <input class="medium-input border-radius-4" data-email="required" id="" name="dialog-sub-{{this}}-number" placeholder="Number of cards" type="text" value=""/>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <a href="#tab_sec{{this}}" data-toggle="tab" style="margin-left:-50%" data-id="{{this}}" class="btn btn-default">Add Card</a>
+                                                        <a href="#tab_sec{{this}}" data-toggle="tab" style="margin-left:-50%" class="btn btn-default">Add Card</a>
                                                     </div>
                                                 </div>
                                                 </div>
